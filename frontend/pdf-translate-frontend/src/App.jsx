@@ -13,7 +13,7 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/translate", formData, {
+      const response = await axios.post("https://pdf-translator-ciq6.onrender.com", formData, {
         responseType: "blob",
       });
 
