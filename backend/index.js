@@ -7,13 +7,13 @@ const { Translate } = require("@google-cloud/translate").v2;
 const cors = require("cors");
 const dotenv = require("dotenv");
 const path = require("path");
-const fontkit = require("fontkit"); // Add this at the top with other requires
+const fontkit = require("fontkit");
+
+dotenv.config(); // Load .env before using environment variables
 
 process.env.GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
-  "C:/Users/kokat/Downloads/my-service-account.json"
+  process.env.GOOGLE_APPLICATION_CREDENTIALS
 );
-
-dotenv.config();
 
 const translate = new Translate();
 const upload = multer({ dest: "uploads/" });
